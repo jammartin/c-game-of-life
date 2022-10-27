@@ -1,4 +1,4 @@
-#include <unistd.h>
+#include <time.h>
 #include <curses.h>
 
 #include "global.h"
@@ -7,7 +7,7 @@
 int MAXROWS;
 int MAXCOLUMNS;
 
-const unsigned int SLEEP_TIME = 50*1000;
+const unsigned int MILLISEC_SLEEP = 100;
 
 #define SS_ROWS 9
 #define SS_COLS 73
@@ -22,6 +22,19 @@ const char START_SCREEN[SS_ROWS][SS_COLS] =
      " #####  #    # #    # ######     ####  #         ####### # #      ######",
      "",
      "           Choose a seed: <[1] random> <[2] glider> <[3] gun>"};
+
+// helper function for sleep milliseconds as usleep is deprecated
+// taken from https://stackoverflow.com/a/33412960/6208997
+int mssleep(long miliseconds)
+{
+   struct timespec rem;
+   struct timespec req= {
+       (int)(miliseconds / 1000),     /* secs (Must be Non-Negative) */ 
+       (miliseconds % 1000) * 1000000 /* nano (Must be in range of 0 to 999999999) */ 
+   };
+
+   return nanosleep(&req , &rem);
+}
 
 int main() {
     
@@ -73,7 +86,7 @@ int main() {
     while(true) {
 	printBoardCurrentState();
 	setBoardNextState();
-	usleep(SLEEP_TIME);
+	mssleep(MILLISEC_SLEEP);
 	if (getch()!=ERR) break; // exit when a key is pressed
     }
 

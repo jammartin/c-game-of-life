@@ -96,8 +96,34 @@ void setUpGun() {
     currentBoard[3][13] = 1;
     currentBoard[9][13] = 1;
     currentBoard[3][14] = 1;
-    currentBoard[9][11] = 1;
+    currentBoard[9][14] = 1;
     // eye
+    currentBoard[6][15] = 1;
+    // beak
+    currentBoard[4][16] = 1;
+    currentBoard[8][16] = 1;
+    currentBoard[5][17] = 1;
+    currentBoard[6][17] = 1;
+    currentBoard[7][17] = 1;
+    currentBoard[6][18] = 1;
+    // ominos object
+    currentBoard[3][21] = 1;
+    currentBoard[4][21] = 1;
+    currentBoard[5][21] = 1;
+    currentBoard[3][22] = 1;
+    currentBoard[4][22] = 1;
+    currentBoard[5][22] = 1;
+    currentBoard[2][23] = 1;
+    currentBoard[6][23] = 1;
+    currentBoard[1][25] = 1;
+    currentBoard[2][25] = 1;
+    currentBoard[6][25] = 1;
+    currentBoard[7][25] = 1;
+    // right block
+    currentBoard[3][35] = 1;
+    currentBoard[4][35] = 1;
+    currentBoard[3][36] = 1;
+    currentBoard[4][36] = 1;
     
 }
 
