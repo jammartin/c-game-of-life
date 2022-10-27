@@ -1,4 +1,4 @@
-#include <time.h>
+#include <unistd.h>
 #include <curses.h>
 
 #include "global.h"
@@ -22,19 +22,6 @@ const char START_SCREEN[SS_ROWS][SS_COLS] =
      " #####  #    # #    # ######     ####  #         ####### # #      ######",
      "",
      "           Choose a seed: <[1] random> <[2] glider> <[3] gun>"};
-
-// helper function for sleep milliseconds as usleep is deprecated
-// taken from https://stackoverflow.com/a/33412960/6208997
-int mssleep(long miliseconds)
-{
-   struct timespec rem;
-   struct timespec req= {
-       (int)(miliseconds / 1000),     /* secs (Must be Non-Negative) */ 
-       (miliseconds % 1000) * 1000000 /* nano (Must be in range of 0 to 999999999) */ 
-   };
-
-   return nanosleep(&req , &rem);
-}
 
 int main() {
     
@@ -86,7 +73,7 @@ int main() {
     while(true) {
 	printBoardCurrentState();
 	setBoardNextState();
-	mssleep(MILLISEC_SLEEP);
+	usleep(MILLISEC_SLEEP*1000);
 	if (getch()!=ERR) break; // exit when a key is pressed
     }
 
