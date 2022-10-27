@@ -1,12 +1,10 @@
 #ifndef GOL_GLOBAL_H
 #define GOL_GLOBAL_H
 
-#ifndef MAXROWS
-#define MAXROWS 40
-#endif
-
-#ifndef MAXCOLUMNS
-#define MAXCOLUMNS 40
-#endif
+//TODO: These should not be global!
+//      Leave it like this for now as dynamically set screen size is a new feature
+int MAXROWS;
+int MAXCOLUMNS;
 
 #endif // GOL_GLOBAL_H
+

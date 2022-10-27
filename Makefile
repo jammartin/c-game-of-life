@@ -8,7 +8,7 @@ INCLDIR := include
 # Set compiler flags
 CFLAGS := -std=c99 -pedantic -Wall -O3 -I$(INCLDIR)
 # Set linker flags
-LDFLAGS := -std=c99
+LDFLAGS := -std=c99 -lncurses
 
 # Define extensions of files
 SRCEXT := c
