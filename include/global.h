@@ -3,8 +3,8 @@
 
 //TODO: These should not be global!
 //      Leave it like this for now as dynamically set screen size is a new feature
-int MAXROWS;
-int MAXCOLUMNS;
+extern int MAXROWS;
+extern int MAXCOLUMNS;
 
 #endif // GOL_GLOBAL_H
 

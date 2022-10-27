@@ -1,5 +1,8 @@
 #include "../include/board.h"
 
+// to be allocated depending on screen size
+int **currentBoard;
+
 void initializeBoard() {
     // get max rows and collumns from ncurses
     MAXROWS = LINES-1;
@@ -76,6 +79,26 @@ void setUpGlider() {
     currentBoard[2][0] = 1;
     currentBoard[2][1] = 1;
     currentBoard[2][2] = 1;
+}
+
+void setUpGun() {
+    // left block
+    currentBoard[5][1] = 1;
+    currentBoard[5][2] = 1;
+    currentBoard[6][1] = 1;
+    currentBoard[6][2] = 1;
+    // bird's head
+    currentBoard[5][11] = 1;
+    currentBoard[6][11] = 1;
+    currentBoard[7][11] = 1;
+    currentBoard[4][12] = 1;
+    currentBoard[8][12] = 1;
+    currentBoard[3][13] = 1;
+    currentBoard[9][13] = 1;
+    currentBoard[3][14] = 1;
+    currentBoard[9][11] = 1;
+    // eye
+    
 }
 
 void destroyBoard(){

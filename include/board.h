@@ -13,8 +13,7 @@ void setBoardNextState();
 
 void setUpGlider();
 void setUpRandom();
-
-int **currentBoard; //[MAXROWS][MAXCOLUMNS];
+void setUpGun();
 
 void destroyBoard();
 

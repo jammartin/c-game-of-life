@@ -17,7 +17,7 @@ This implementation uses [ncurses](https://invisible-island.net/ncurses/ncurses-
 ### Install on Linux
 
 ```
-$ sudo apt-get install libncurses-dev
+$ sudo apt install libncurses-dev
 ```
 
 ### Install on MacOS

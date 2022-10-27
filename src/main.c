@@ -4,6 +4,9 @@
 #include "global.h"
 #include "board.h"
 
+int MAXROWS;
+int MAXCOLUMNS;
+
 const unsigned int SLEEP_TIME = 50*1000;
 
 #define SS_ROWS 9
@@ -18,7 +21,7 @@ const char START_SCREEN[SS_ROWS][SS_COLS] =
      "#     # #    # #    # #         #    # #         #       # #      #     ", 
      " #####  #    # #    # ######     ####  #         ####### # #      ######",
      "",
-     "                Choose a seed: <[1] random> <[2] glider>"};
+     "           Choose a seed: <[1] random> <[2] glider> <[3] gun>"};
 
 int main() {
     
@@ -52,6 +55,10 @@ int main() {
 	    break;
 	case 2:
 	    setUpGlider();
+	    validOption = true;
+	    break;
+	case 3:
+	    setUpGun();
 	    validOption = true;
 	    break;
 	default:
