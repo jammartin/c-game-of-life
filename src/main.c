@@ -7,7 +7,7 @@
 int MAXROWS;
 int MAXCOLUMNS;
 
-const unsigned int MILLISEC_SLEEP = 100;
+const unsigned int MILLISEC_SLEEP = 150;
 
 #define SS_ROWS 9
 #define SS_COLS 73
@@ -21,7 +21,7 @@ const char START_SCREEN[SS_ROWS][SS_COLS] =
      "#     # #    # #    # #         #    # #         #       # #      #     ", 
      " #####  #    # #    # ######     ####  #         ####### # #      ######",
      "",
-     "           Choose a seed: <[1] random> <[2] glider> <[3] gun>"};
+     "     Choose a seed: <[1] random> <[2] glider> <[3] gun> <[4] bomb>"};
 
 int main() {
     
@@ -61,6 +61,10 @@ int main() {
 	    setUpGun();
 	    validOption = true;
 	    break;
+	case 4:
+	    setUpBomb();
+	    validOption = true;
+	    break;
 	default:
 	    mvaddstr(ssi+SS_ROWS+1, ssj+SS_COLS/2-15, "INVALID OPTION. CHOOSE AGAIN!");
 	    validOption = false;
@@ -73,7 +77,9 @@ int main() {
     while(true) {
 	printBoardCurrentState();
 	setBoardNextState();
+
 	usleep(MILLISEC_SLEEP*1000);
+
 	if (getch()!=ERR) break; // exit when a key is pressed
     }
 

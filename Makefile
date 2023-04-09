@@ -6,7 +6,7 @@ INCLDIR := include
 
 # resource on flags: https://stackoverflow.com/questions/2855121/what-is-the-purpose-of-using-pedantic-in-the-gcc-g-compiler
 # Set compiler flags
-CFLAGS := -std=c99 -pedantic -Wall -O3 -I$(INCLDIR)
+CFLAGS := -std=c99 -pedantic -Wall -O3 -D_BSD_SOURCE -I$(INCLDIR)
 # Set linker flags
 LDFLAGS := -std=c99 -lncurses
 
@@ -91,4 +91,4 @@ $(OBJDIR)/%.$(OBJEXT): $(DEPDIR)/%.$(DEPEXT) | $(OBJDIR)
 	@$(CC) -c $(CFLAGS) $(@:$(OBJDIR)/%.$(OBJEXT)=$(SRCDIR)/%.$(SRCEXT)) -o $@
 	@echo "... done."
 
-.PHONY: all debug clean cleaner 
+.PHONY: all debug clean superclean 

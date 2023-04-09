@@ -14,6 +14,7 @@ void setBoardNextState();
 void setUpGlider();
 void setUpRandom();
 void setUpGun();
+void setUpBomb();
 
 void destroyBoard();
 

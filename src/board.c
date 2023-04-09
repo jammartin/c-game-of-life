@@ -127,6 +127,26 @@ void setUpGun() {
     
 }
 
+void setUpBomb(){
+    currentBoard[1+MAXROWS/2][0+MAXCOLUMNS/2] = 1;
+    currentBoard[0+MAXROWS/2][1+MAXCOLUMNS/2] = 1;
+    currentBoard[1+MAXROWS/2][2+MAXCOLUMNS/2] = 1;
+    currentBoard[3+MAXROWS/2][2+MAXCOLUMNS/2] = 1;
+    currentBoard[4+MAXROWS/2][2+MAXCOLUMNS/2] = 1;
+    currentBoard[4+MAXROWS/2][3+MAXCOLUMNS/2] = 1;
+    currentBoard[5+MAXROWS/2][3+MAXCOLUMNS/2] = 1;
+    currentBoard[3+MAXROWS/2][5+MAXCOLUMNS/2] = 1;
+    currentBoard[2+MAXROWS/2][7+MAXCOLUMNS/2] = 1;
+    currentBoard[1+MAXROWS/2][7+MAXCOLUMNS/2] = 1;
+    currentBoard[3+MAXROWS/2][9+MAXCOLUMNS/2] = 1;
+    currentBoard[4+MAXROWS/2][10+MAXCOLUMNS/2] = 1;
+    currentBoard[3+MAXROWS/2][12+MAXCOLUMNS/2] = 1;
+    currentBoard[2+MAXROWS/2][12+MAXCOLUMNS/2] = 1;
+    currentBoard[0+MAXROWS/2][13+MAXCOLUMNS/2] = 1;
+    currentBoard[0+MAXROWS/2][14+MAXCOLUMNS/2] = 1;
+    currentBoard[1+MAXROWS/2][14+MAXCOLUMNS/2] = 1;
+}
+
 void destroyBoard(){
     for (int i=0; i<MAXROWS; i++){
 	free(currentBoard[i]); 
